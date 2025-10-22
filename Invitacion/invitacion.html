@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Glamping 💫</title>
+  <style>
+    /* ======== ESTILOS GENERALES ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: url('./img/invitacion\ .jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* Capa oscura para resaltar el texto */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 380px;
+      padding: 35px 25px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 1.2s ease;
+    }
+
+    .card h1 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #f5f5f5;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #ff8db3, #ff5fa2);
+      color: white;
+      border: none;
+      padding: 14px 35px;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #ff5fa2, #ff8db3);
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Efecto sutil de corazones flotando */
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    .heart {
+      position: absolute;
+      bottom: 0;
+      color: rgba(255, 182, 193, 0.7);
+      font-size: 1.5rem;
+      animation: float 6s linear infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tarjeta de invitación -->
+  <div class="card">
+    <h1>💖 ¡Celebrando tu vida con amor! 💖</h1>
+    <p>Te invito a vivir juntos dos días especiales para celebrar lo que eres, lo que compartimos y todo lo que nos hace únicos.</p>
+
+    <p><strong>📅 Fechas:</strong> 13 y 14 de diciembre<br>
+    <strong>📍 Lugar:</strong> La Vega, Cundinamarca</p>
+
+    <p>Quiero que este lugar sea nuestro refugio, el espacio donde celebremos el amor y la vida, rodeados de naturaleza y con el corazón lleno de momentos memorables.  
+    No puedo esperar para disfrutar de estos días juntos. 💫</p>
+
+    <a href="https://wa.me/+573108155823?text=Claro%20que%20voy%20contigo%20amor%20de%20mi%20vida!%20💖" class="btn">Sí, voy contigo 💞</a>
+  </div>
+
+  <!-- Corazones flotantes -->
+  <script>
+    const body = document.body;
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      heart.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+      body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 10000);
+    }
+  </script>
+
+</body>
+</html>
